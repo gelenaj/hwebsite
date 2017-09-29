@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+{% block content %} 
+
+{{HondurasBases.js}}
+<h1 id="pageHeading">U.S. Military Bases</h1>
+
+<div class="map-container">
+  <div id="map">{{HondurasBases.html}}</div>
+</div>
+
+<div id="mapLegend">
+  <div>
+    <label>Name:</label><span> Soto Cano/Palmerola</span>
+    <br>
+    <label>Location:</label><span>Comayagua</span>
+    <br>
+    <label>Constructed:</label> <span>1982</span>
+    <br>
+    <label>Status:</label> 
+  </div>
+  <hr>
+  <div><label>Name:</label> <span>Puerto Castilla</span>
+    <br>
+    <label>Location:</label><span>Puerto Castilla</span>
+    <br>
+    <label>Established: 1983</label>
+  </div>
+  <hr>
+  <div><label>Name:</label> <span>El Aguacate</span>
+    <br>
+    <label>Location:</label><span>Comayagua</span>
+    <br>
+    <label>Constructed:</label><span>1983</span>
+    <br>
+    <label>Status:</label><span>1982</span>
+  </div>
+  <div>
+    <hr>
+    <label>Name:</label> <span>Caratasca</span>
+    <br>
+    <label>Location:</label><span>Mosquitia</span>
+    <br>
+    <label>Constructed:</label> <span>1983</span>
+    <br>
+    <label>Opened:</label> <span>2010</span>
+  </div>
+  <div>
+    <hr>
+      <label>Name:</label><span> Rio Claro</span>
+      <br>
+      <label>Location:</label><span>Tocoa, Colon</span>
+      <br>
+      <label>Constructed:</label> </span>test</span>
+      <br>
+      <label>Opened:</label><span> test</span>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %} 
+<header class="intro-header">     
+    <div class="site-heading">
+        <h1 id="heading-title">U.S. Intervention in Honduras<br></h1>
+        <div class="background">
+            <div id="transbox">Tracking U.S. governmental, private, non-profit and corporate policies and practices in Honduras.</div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">           
+{% for News in featuredNews %}
+            <div id="indexSection">
+                <h2>{{News.title}}</h2>
+                <p>{{(News.date).strftime("%B %d, %Y")}}</p>
+                <p>{{News.body}}</p>
+{% endfor %}
+                <br>
+                <a href="/news" style="float:right">More News &rarr;</a>
+            </div>
+        </div>
+            <br>
+    </div>
+</div>
+{% endblock %}

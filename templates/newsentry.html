@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12"> 
+                <div id="indexSection">        
+                    <h1>{{news_entry.title}}</h1>
+                    <p>{{(news_entry.date).strftime("%B %d, %Y")}}</p>
+                    <br>
+                    <p>{{news_entry.body}}</p>
+
+                    <br>
+                    <h2>Read more (external sources):</h2>
+                {% for urls in allLinks if not urls.hidden %}      
+                    <li><a href="{{urls.url}}">{{urls.urlTitle}}</a></li>
+                
+                {% else %}
+                    <p>No links yet</p>
+                </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+{% endblock %}
+
+
