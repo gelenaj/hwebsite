@@ -4,7 +4,9 @@ from flask_migrate import Migrate
 import os
 from flask import Flask, request, redirect, render_template, flash
 from flask_script import Manager
-from flask_googlemaps import GoogleMaps, Map, icons
+from flask_googlemaps import GoogleMaps
+from flask_googlemaps import Map
+from flask_googlemaps import icons
 from flask_assets import Environment, Bundle
 import smtplib
 import string
@@ -18,6 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
 
+GoogleMaps(app)
 db = SQLAlchemy(app)
 
 js = Bundle('js/timeline_show_all.js',
@@ -29,10 +32,6 @@ manager = Manager(app)
 
 from models import *
 migrate=Migrate(app, db)
-
-# @app.route('/')
-# def hello():
-#     return "88888888888888888888888888888888888!"
 
 @app.route('/')
 def index():
