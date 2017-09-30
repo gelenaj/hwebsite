@@ -2,6 +2,7 @@ from app import db
 from sqlalchemy.dialects.postgresql import JSON
 
 class News(db.Model):
+    __tablename__ = 'news'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     body=db.Column(db.String(1000))
@@ -17,6 +18,7 @@ class News(db.Model):
         self.featured=False
 
 class Links(db.Model):
+    __tablename__ = 'links'
     id=db.Column(db.Integer, primary_key=True)
     urlTitle= db.Column(db.String(120))
     url= db.Column(db.String(120))
@@ -28,6 +30,7 @@ class Links(db.Model):
         self.owner=owner
 
 class Tags(db.Model):
+    __tablename__ = 'tags'
     id=db.Column(db.Integer, primary_key=True)
     tagTitle= db.Column(db.String(120), unique=True)
     owner_tags_id=db.Column(db.Integer, db.ForeignKey('news.id'))
@@ -36,9 +39,3 @@ class Tags(db.Model):
         self.tagTitle=tagTitle
         self.owner=owner
 
-class ContactForm(Form):
-    name = StringField('Name (required): ', [validators.DataRequired('Please enter your name')])
-    email = StringField('Email (required): ',[validators.Email('Please enter a valid email')])
-    subject = StringField('Subject (Optional): ')
-    message =  TextAreaField('Message (required): ',[validators.DataRequired('Please enter a message')])
-    submit= SubmitField('Submit')
