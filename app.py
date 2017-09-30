@@ -1,30 +1,44 @@
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import os
+from flask import Flask, request, redirect, render_template, flash
+from flask_script import Manager
+from flask_googlemaps import GoogleMaps, Map, icons
+from flask_assets import Environment, Bundle
+import smtplib
+import string
+from os import environ
+import psycopg2
+import urllib.parse
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
+
 db = SQLAlchemy(app)
 
-from models import Result
+js = Bundle('js/timeline_show_all.js',
+            output='gen/main.js')
+assets = Environment(app)
+assets.init_app(app)
+assets.register('main.js', js)
+manager = Manager(app)
 
-app = Flask(__name__)
+from models import *
+migrate=Migrate(app, db)
 
-
-
-@app.route('/')
-def hello():
-    return "Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!"
+# @app.route('/')
+# def hello():
+#     return "88888888888888888888888888888888888!"
 
 @app.route('/')
 def index():
-    featuredNews=News.query.filter_by(featured=1)
+    featuredNews=News.query.filter_by(featured=True)
     return render_template('index.html', featuredNews=featuredNews)
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 @app.route('/hondurasmap')
 def hondurasmap():
