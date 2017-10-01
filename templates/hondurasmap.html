@@ -2,10 +2,11 @@
 
 {% block content %} 
 
-<h1 id="pageHeading">U.S. Military Bases</h1>
+{{HondurasBases.js}}
+
 
 <div class="map-container">
-{{HondurasBases.html}}
+  <div id="map">{{HondurasBases.html}}</div>
 </div>
 
 <div id="mapLegend">
