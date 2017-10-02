@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import os
 from flask import Flask, request, redirect, render_template, flash
 from flask_script import Manager
 from flask_googlemaps import GoogleMaps
@@ -10,15 +9,17 @@ from flask_googlemaps import icons
 from flask_assets import Environment, Bundle
 import smtplib
 import string
-from os import environ
+import os
 import psycopg2
 import urllib.parse
 
 app = Flask(__name__, template_folder="templates")
 app.config.from_object(os.environ['APP_SETTINGS'])
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
+SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 GoogleMaps(app)
 db = SQLAlchemy(app)
