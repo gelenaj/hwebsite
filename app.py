@@ -16,11 +16,8 @@ import urllib.parse
 app = Flask(__name__, template_folder="templates")
 app.config.from_object(os.environ['APP_SETTINGS'])
 
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = environ['DATABASE_URL']
 app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
