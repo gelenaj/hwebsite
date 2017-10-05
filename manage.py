@@ -2,9 +2,9 @@ import os
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
+from app import app, db
+from models import *
 
-from app import app
-db=SQLAlchemy(app)
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 

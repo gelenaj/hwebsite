@@ -14,26 +14,31 @@ import psycopg2
 import urllib.parse as urlparse
 
 app = Flask(__name__, template_folder="templates")
-app.config.from_object(os.environ['APP_SETTINGS'])
+#app.config.from_object(os.environ['APP_SETTINGS'])
 
 urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
+#url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 try:
-    conn = psycopg2.connect(
-        database=url.path[1:],
-        user=url.username,
-        password=url.password,
-        host=url.hostname,
-        port=url.port
-    )
+    
+   # conn = psycopg2.connect(
+   #     database=url.path[1:],
+   #     user=url.username,
+   #     password=url.password,
+   #     host=url.hostname,
+   #     port=url.port
+   # ) 
+    psycopg2.connect(dbname="hondurasnews", user="postgres", password="19db19", host="localhost", port="")
     print("I am connected to the database")
 except:
        print("I am unable to connect to the database")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgres://postgres:12db90@localhost:5432/hondurasnews'
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+
+#app.config['GOOGLEMAPS'] = os.environ['GOOGLEMAPS_KEY']
+GOOGLEMAPS_KEY='AIzaSyB1tbIAqN0XqcgTR1-FxYoVTVq6Is6lD98'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 GoogleMaps(app)
@@ -53,7 +58,6 @@ migrate=Migrate(app, db)
 def index():
     featuredNews=News.query.filter_by(featured=True)
     return render_template('index.html', featuredNews=featuredNews)
-
 
 @app.route('/hondurasmap')
 def hondurasmap():

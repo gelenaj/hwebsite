@@ -1,8 +1,10 @@
 from app import db
 from sqlalchemy.dialects.postgresql import JSON
 
+
 class News(db.Model):
     __tablename__ = 'news'
+    __table_args__ = {'extend_existing': True} 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     body=db.Column(db.String(1000))
@@ -19,6 +21,7 @@ class News(db.Model):
 
 class Links(db.Model):
     __tablename__ = 'links'
+    __table_args__ = {'extend_existing': True} 
     id=db.Column(db.Integer, primary_key=True)
     urlTitle= db.Column(db.String(120))
     url= db.Column(db.String(120))
@@ -31,6 +34,7 @@ class Links(db.Model):
 
 class Tags(db.Model):
     __tablename__ = 'tags'
+    __table_args__ = {'extend_existing': True} 
     id=db.Column(db.Integer, primary_key=True)
     tagTitle= db.Column(db.String(120), unique=True)
     owner_tags_id=db.Column(db.Integer, db.ForeignKey('news.id'))

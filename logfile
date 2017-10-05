@@ -1,0 +1,122 @@
+LOG:  database system was shut down at 2017-10-03 19:15:07 EDT
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+ERROR:  syntax error at or near "createuser" at character 1
+STATEMENT:  createuser postgres;
+FATAL:  role "postgres" does not exist
+ERROR:  syntax error at or near "psql" at character 1
+STATEMENT:  psql -h localhost -p 5432 postgres
+	createuser postgres
+	CREATEUSER POSTGRES
+	du
+	CREATEUSER postgres
+	CREATE USER postgres
+	create user postgres
+	create role postgres
+	CREATE ROLE postgres
+	CREATE ROLE postgres;
+FATAL:  role "postgres" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  database "honduraswebsite" does not exist
+ERROR:  syntax error at or near "psql" at character 1
+STATEMENT:  psql -d testdb
+	createdb
+	psql -h localhost
+	CREATE DATABASE testdb;
+FATAL:  database "honduraswebsite" does not exist
+FATAL:  database "honduraswebsite" does not exist
+FATAL:  database "test3" does not exist
+FATAL:  database "test3" does not exist
+FATAL:  role "postgres" does not exist
+FATAL:  database "test2" does not exist
+FATAL:  database "test3" does not exist
+FATAL:  database "test2" does not exist
+FATAL:  database "honduraswebsite" does not exist
+FATAL:  database "honduraswebsite" does not exist
+FATAL:  database "hwcontent" does not exist
+FATAL:  database "honduraswebsite" does not exist
+FATAL:  database "honduraswebsite" does not exist
+LOG:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezone": No such file or directory
+LOG:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezone": No such file or directory
+FATAL:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezonesets": No such file or directory
+HINT:  This may indicate an incomplete PostgreSQL installation, or that the file "C:/Program Files/PostgreSQL/9.6/bin/postgres.exe" has been moved away from its proper location.
+WARNING:  worker took too long to start; canceled
+LOG:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezone": No such file or directory
+LOG:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezone": No such file or directory
+FATAL:  could not open directory "C:/Program Files/PostgreSQL/9.6/share/timezonesets": No such file or directory
+HINT:  This may indicate an incomplete PostgreSQL installation, or that the file "C:/Program Files/PostgreSQL/9.6/bin/postgres.exe" has been moved away from its proper location.
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
+LOG:  could not bind IPv6 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+LOG:  could not bind IPv4 socket: Permission denied
+HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+WARNING:  could not create listen socket for "localhost"
+FATAL:  could not create any TCP/IP sockets
+LOG:  database system is shut down
